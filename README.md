@@ -7,7 +7,7 @@ gem 'sb-omniauth-kakao'
 ```
 
 ## Kakao app
-
+https://developers.kakao.com/console/app
 
 ## Usage
 
