@@ -1,1 +1,20 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+
+# Build
 *.gem
+
+# rspec failure tracking
+.rspec_status
+
+
+# runtime
+.env
+tmp-result-*.json
+Gemfile.lock
