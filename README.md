@@ -1,37 +1,29 @@
 # OmniAuth Kakao
 
-This is the OmniAuth strategy for authenticating to [Kakao](http://www.kakao.com/). To
-use it, you'll need to sign up for an REST API Key on the [Kakao Developers Page](http://developers.kakao.com). For more information, please refer to [Create New Application](https://developers.kakao.com/docs/restapi#시작하기-앱-생성) page.
-
 [카카오](http://www.kakao.com/) 인증을 위한 OmniAuth strategy 입니다. [카카오 개발자 페이지](http://developers.kakao.com)에서 REST API 키를 생성한 뒤 이용해 주세요. 자세한 사항은 [시작하기 - 앱 생성](https://developers.kakao.com/docs/restapi#시작하기-앱-생성) 페이지를 참고하시기 바랍니다.
 
 ## Installing
 
 Add to your `Gemfile`:
-
-`Gemfile`에 다음의 코드를 넣어주세요.
-
 ```ruby
-gem 'omniauth-kakao'
+gem 'omniauth-kakao', git: git@github.com:ScriptonBasestar/sb-omniauth-kakao.git
 ```
 
 Then `bundle install`.
 
-이후 `bundle install` 을 실행해 주세요.
-
 ## Usage
 
-Here's a quick example, adding the middleware to a Rails app in `config/initializers/omniauth.rb`:
+### Rails
 
-다음은 간단한 예제입니다. `config/initializers/omniauth.rb`에서 미들웨어(Middleware)를 레일즈 어플리케이션에 넣어주세요.
+Rails Middleware 편집
 
-
+`config/initializers/omniauth.rb`:
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
+  # 3 중 1
   provider :kakao, ENV['KAKAO_CLIENT_ID']
-
-  # 또는 Redirect Path를 설정하고 싶다면(or if you want to customize your Redirect Path)
-  # provider :kakao, ENV['KAKAO_CLIENT_ID'], {:redirect_path => ENV['REDIRECT_PATH']}
+  provider :kakao, ENV['KAKAO_CLIENT_ID'], ENV['KAKAO_CLIENT_SECRET']
+  provider :kakao, ENV['KAKAO_CLIENT_ID'], {:redirect_path => ENV['REDIRECT_PATH']}
 end
 ```
 
@@ -99,31 +91,4 @@ Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 ```
 
 ## Contributors
-* [Shayne Sung-Hee Kang](https://github.com/shaynekang)
-* [Hong Chulju](https://github.com/fegs)
-* [leekorea(hans-hk)](https://github.com/hans-hk)
-
-## Contribute
-
-1. Fork the repository.
-1. Create a new branch for each feature or improvement.
-1. Add tests for it. This is important!
-1. Send a pull request from each feature branch.
-
-***
-
-1. 저장소를 Fork해 주세요.
-1. 새로운 기능(또는 개선할 부분)마다 브랜치를 만들어 주세요.
-1. 테스트를 작성해주세요. 이는 매우 중요합니다!
-1. 브랜치를 pull request로 보내주세요.
-
-
-## License
-
-Copyright (c) 2014 [Shayne Sung-Hee Kang](http://medium.com/@shaynekang).
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Issue 요청 또는 따로 받아다 쓰기
