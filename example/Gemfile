@@ -1,5 +1,27 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'sinatra', '~> 1.4.5'
-gem 'shotgun', '~> 0.9'
-gem 'omniauth-kakao', :path => '../'
+source "https://rubygems.org"
+
+group :development, :test do
+  gem "growl"
+  gem "guard"
+  gem "guard-bundler"
+  gem "guard-rspec"
+  gem "rb-fsevent"
+
+  gem "dotenv"
+  # gem "omniauth"
+  # gem "omniauth-kakao", git: "https://github.com/shaynekang/omniauth-kakao.git"
+  # gem "sb-omniauth-kakao", git: "https://github.com/ScriptonBasestar/sb-omniauth-kakao.git"
+
+  gem "sb-omniauth-kakao", path: "../"
+
+  gem "byebug"
+
+  gem "sinatra"
+
+  gem "puma"
+  gem "rackup"
+
+  gem "rerun"
+end
