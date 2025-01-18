@@ -6,7 +6,7 @@
 
 Add to your `Gemfile`:
 ```ruby
-gem 'omniauth-kakao', git: git@github.com:ScriptonBasestar/sb-omniauth-kakao.git
+gem 'sb-omniauth-kakao', git: git@github.com:ScriptonBasestar/sb-omniauth-kakao.git
 ```
 
 Then `bundle install`.
