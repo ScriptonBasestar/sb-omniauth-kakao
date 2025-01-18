@@ -23,7 +23,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'omniauth', '~> 1.0'
   s.add_dependency 'omniauth-oauth2', '~> 1.3.1'
 
+  s.add_development_dependency "bundler", "~> 1.11"
+  s.add_development_dependency "rake", "~> 10.0"
   s.add_development_dependency 'rspec', '~> 2.14', '>= 2.14.1'
   s.add_development_dependency 'guard-rspec', '~> 4.2', '>= 4.2.8'
   s.add_development_dependency 'fakeweb', '~> 1.3', '>= 1.3.0'
+  spec.add_development_dependency "minitest", "~> 5.0"
 end

@@ -6,7 +6,7 @@ oauth2는 다 좋은데 왜 로깅이 안되는걸까
 
 [카카오](http://www.kakao.com/) 인증을 위한 OmniAuth strategy 입니다. [카카오 개발자 페이지](http://developers.kakao.com)에서 REST API 키를 생성한 뒤 이용해 주세요. 자세한 사항은 [시작하기 - 앱 생성](https://developers.kakao.com/docs/restapi#시작하기-앱-생성) 페이지를 참고하시기 바랍니다.
 
-## Installing
+## Installation
 
 Add to your `Gemfile`:
 ```ruby
@@ -95,4 +95,4 @@ Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 ```
 
 ## Contributors
-Issue 요청 또는 따로 받아다 쓰기
+Issue or Fork PR

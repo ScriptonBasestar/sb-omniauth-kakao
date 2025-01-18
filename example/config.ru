@@ -9,8 +9,6 @@ require "logger"
 require "byebug"
 
 require "sb-omniauth-kakao"
-# require_relative "../lib/sb-omniauth-kakao.rb"
-# require "./lib/sb-omniauth-kakao"
 
 require "dotenv"
 Dotenv.load
