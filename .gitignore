@@ -7,9 +7,6 @@
 /spec/reports/
 /tmp/
 
-# Build
-*.gem
-
 # rspec failure tracking
 .rspec_status
 
@@ -18,3 +15,6 @@
 .env
 tmp-result-*.json
 Gemfile.lock
+
+# IDE
+.idea/
