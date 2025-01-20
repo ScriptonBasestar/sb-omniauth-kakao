@@ -2,31 +2,32 @@
 $:.push File.expand_path("../lib", __FILE__)
 require "omniauth-kakao/version"
 
-Gem::Specification.new do |s|
-  s.name        = "sb-omniauth-kakao"
-  s.version     = Omniauth::Kakao::VERSION
-  s.platform    = Gem::Platform::RUBY
-  s.authors     = ["archmagece"]
-  s.email       = ["archmagece@users.noreply.github.com"]
-  s.homepage    = "https://github.com/ScriptonBasestar/sb-omniauth-kakao"
-  s.summary     = %q{OmniAuth strategy for Kakao}
-  s.description = %q{OmniAuth strategy for Kakao(http://developers.kakao.com/)}
-  s.license     = "MIT"
+Gem::Specification.new do |spec|
+  spec.name        = "sb-omniauth-kakao"
+  spec.version     = Omniauth::Kakao::VERSION
+  spec.platform    = Gem::Platform::RUBY
+  spec.authors     = ["archmagece"]
+  spec.email       = ["archmagece@userspec.noreply.github.com"]
 
-  s.rubyforge_project = "sb-omniauth-kakao"
+  spec.homepage    = "https://github.com/ScriptonBasestar/sb-omniauth-kakao"
+  spec.summary     = %q{OmniAuth strategy for Kakao}
+  spec.description = %q{OmniAuth strategy for Kakao(http://developerspec.kakao.com/)}
+  spec.license     = "MIT"
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  spec.rubyforge_project = "sb-omniauth-kakao"
 
-  s.add_dependency 'omniauth', '~> 1.0'
-  s.add_dependency 'omniauth-oauth2', '~> 1.3.1'
+  spec.files         = `git ls-files`.split("\n")
+  spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  spec.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  spec.require_paths = ["lib"]
 
-  s.add_development_dependency "bundler", "~> 1.11"
-  s.add_development_dependency "rake", "~> 10.0"
-  s.add_development_dependency 'rspec', '~> 2.14', '>= 2.14.1'
-  s.add_development_dependency 'guard-rspec', '~> 4.2', '>= 4.2.8'
-  s.add_development_dependency 'fakeweb', '~> 1.3', '>= 1.3.0'
-  s.add_development_dependency "minitest", "~> 5.0"
+  spec.add_dependency 'omniauth', '~> 1.9'
+  spec.add_dependency 'omniauth-oauth2', '~> 1.3'
+
+  spec.add_development_dependency "bundler", "~> 2.6"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency 'rspec', '~> 3.13'
+  spec.add_development_dependency 'guard-rspec', '~> 4.7'
+  spec.add_development_dependency 'fakeweb', '~> 1.3'
+  spec.add_development_dependency "minitest", "~> 5.25"
 end
