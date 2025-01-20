@@ -25,13 +25,11 @@ module OmniAuth
 
       uid {
         OmniAuth.logger.send :debug, "uid >>>>>>>>>>"
-        OmniAuth.logger.send :debug, "Kakao uid: #{raw_info["id"]}"
-        OmniAuth.logger.send :debug, "Kakao uid: #{raw_info}"
-        OmniAuth.logger.send :debug, "id ----------" 
         raw_info["id"].to_s
       }
 
       info do
+        OmniAuth.logger.send :debug, "info >>>>>>>>>>"
         hash = {
           name: raw_info["properties"]["nickname"],
           username: raw_info["kakao_account"]["email"],
@@ -44,6 +42,7 @@ module OmniAuth
       end
 
       extra do
+        OmniAuth.logger.send :debug, "extra >>>>>>>>>>"
         { raw_info: raw_info }
       end
 
