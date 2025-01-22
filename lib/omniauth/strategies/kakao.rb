@@ -18,6 +18,8 @@ module OmniAuth
       # USER_INFO_URL = 'v1/oidc/userinfo'
       USER_INFO_URL = "https://kapi.kakao.com/v2/user/me".freeze
 
+      option :name, :kakao
+
       option :client_options,
              site: BASE_URL,
              authorize_url: AUTHORIZE_URL,
