@@ -9,13 +9,14 @@ on:
 jobs:
   build:
     name: Build + Publish
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-        # Due to https://github.com/actions/runner/issues/849, we have to use quotes for '3.0'
-        ruby: ['2.7', '3.0', '3.1', '3.2', '3.3', head, jruby, jruby-head, truffleruby, truffleruby-head]
-    runs-on: ${{ matrix.os }}
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     os: [ubuntu-latest, macos-latest]
+    #     # Due to https://github.com/actions/runner/issues/849, we have to use quotes for '3.0'
+    #     ruby: ['2.7', '3.0', '3.1', '3.2', '3.3', head, jruby, jruby-head, truffleruby, truffleruby-head]
+    # runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -25,7 +26,8 @@ jobs:
     - name: Set up Ruby matrix
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.ruby }}
+        # ruby-version: ${{ matrix.ruby }}
+        ruby-version: '3.3'
 
     - name: Publish to GPR
       run: |
