@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'omniauth'
-require 'omniauth-kakao'
+require 'sb-omniauth-kakao'
 
 describe OmniAuth::Strategies::Kakao do
   CLIENT_ID = '<<your-client-id>>'

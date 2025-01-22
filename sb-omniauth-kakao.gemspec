@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "omniauth-kakao/version"
+require "sb-omniauth-kakao/version"
 
 Gem::Specification.new do |spec|
   spec.name        = "sb-omniauth-kakao"
