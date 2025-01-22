@@ -11,6 +11,17 @@ oauth2는 다 좋은데 왜 로깅이 안되는걸까
 Add to your `Gemfile`:
 ```ruby
 gem 'sb-omniauth-kakao', git: git@github.com:ScriptonBasestar/sb-omniauth-kakao.git
+
+or
+
+gem "sb-omniauth-kakao", "0.3.0", source: "https://rubygems.pkg.github.com/scriptonbasestar"
+
+or
+
+# https://github.com/ScriptonBasestar/sb-omniauth-kakao/pkgs/rubygems/sb-omniauth-kakao
+source "https://rubygems.pkg.github.com/scriptonbasestar" do
+  gem "sb-omniauth-kakao", "0.3.0"
+end
 ```
 
 Then `bundle install`.
