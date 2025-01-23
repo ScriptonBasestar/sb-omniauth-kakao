@@ -5,7 +5,7 @@ require "omniauth-oauth2"
 module OmniAuth
   module Strategies
     class Kakao < OmniAuth::Strategies::OAuth2
-      DEFAULT_SCOPE = "account_email,profile".freeze
+      DEFAULT_SCOPE = "profile_nickname,profile_image".freeze
 
       BASE_URL = "https://kauth.kakao.com".freeze
       AUTHORIZE_URL = "/oauth/authorize".freeze
@@ -49,7 +49,7 @@ module OmniAuth
       end
 
       def callback_url
-        options.redirect_url || (full_host + callback_path)
+          options.redirect_url || (full_host + callback_path)
       end
 
       # def authorize_params
