@@ -14,13 +14,13 @@ gem 'sb-omniauth-kakao', git: git@github.com:ScriptonBasestar/sb-omniauth-kakao.
 
 or
 
-gem "sb-omniauth-kakao", "0.3.0", source: "https://rubygems.pkg.github.com/scriptonbasestar"
+gem "sb-omniauth-kakao", "0.3.2", source: "https://rubygems.pkg.github.com/scriptonbasestar"
 
 or
 
 # https://github.com/ScriptonBasestar/sb-omniauth-kakao/pkgs/rubygems/sb-omniauth-kakao
 source "https://rubygems.pkg.github.com/scriptonbasestar" do
-  gem "sb-omniauth-kakao", "0.3.0"
+  gem "sb-omniauth-kakao", "0.3.2"
 end
 ```
 
@@ -39,6 +39,9 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :kakao, ENV['KAKAO_CLIENT_ID']
   provider :kakao, ENV['KAKAO_CLIENT_ID'], ENV['KAKAO_CLIENT_SECRET']
   provider :kakao, ENV['KAKAO_CLIENT_ID'], {:redirect_path => ENV['REDIRECT_PATH']}
+  provider :kakao, ENV['KAKAO_CLIENT_ID'], {:redirect_path => ENV['REDIRECT_PATH']}
+  provider :kakao, ENV['KAKAO_CLIENT_ID'], ENV['KAKAO_CLIENT_SECRET'], {redirect_url: ENV['REDIRECT_URL'], scope: ENV['KAKAO_SCOPE']}
+  provider :kakao, ENV['KAKAO_CLIENT_ID'], ENV['KAKAO_CLIENT_SECRET'], {redirect_url: ENV['REDIRECT_URL'], scope: 'profile_nickname,profile_image,account_email'}
 end
 ```
 
@@ -87,6 +90,8 @@ Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
   :uid => '123456789',
   :info => {
     :name => 'Hong Gil-Dong',
+    :username => nil,
+    :email => nil,
     :image => 'http://xxx.kakao.com/.../aaa.jpg',
   },
   :credentials => {
@@ -107,3 +112,10 @@ Here's an example *Auth Hash* available in `request.env['omniauth.auth']`:
 
 ## Contributors
 Issue or Fork PR
+
+          name: raw_info["properties"]["nickname"],
+          username: raw_info["kakao_account"]["email"],
+          image: raw_info["properties"]["thumbnail_image"]
+        }
+        if raw_info["kakao_account"]["has_email"] && raw_info["kakao_account"]["is_email_verified"] && raw_info["kakao_account"]["is_email_valid"]
+          hash[:email] = raw_info["kakao_account"]["email"]
