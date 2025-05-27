@@ -14,13 +14,13 @@ gem 'sb-omniauth-kakao', git: git@github.com:ScriptonBasestar/sb-omniauth-kakao.
 
 or
 
-gem "sb-omniauth-kakao", "0.3.2", source: "https://rubygems.pkg.github.com/scriptonbasestar"
+gem "sb-omniauth-kakao", "0.3.3", source: "https://rubygems.pkg.github.com/scriptonbasestar"
 
 or
 
 # https://github.com/ScriptonBasestar/sb-omniauth-kakao/pkgs/rubygems/sb-omniauth-kakao
 source "https://rubygems.pkg.github.com/scriptonbasestar" do
-  gem "sb-omniauth-kakao", "0.3.2"
+  gem "sb-omniauth-kakao", "0.3.3"
 end
 ```
 
